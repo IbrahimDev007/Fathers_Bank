@@ -20,6 +20,9 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
     if (isNaN(paparseFloat(withdrawAmount) )) {
         alert("Withdraw Number is not a number")
     }
+    else if(parseFloat(withdrawAmount) > parseFloat(document.getElementById('Balance-amount').innerText)){
+  alert("You do not have enough money")
+    }
     else {
         document.getElementById("withdraw-amount").innerText = parseFloat(document.getElementById('withdraw-amount').innerText) +parseFloat(withdrawAmount);
         document.getElementById("Balance-amount").innerText =parseFloat(document.getElementById('Balance-amount').innerText) -parseFloat(withdrawAmount);
